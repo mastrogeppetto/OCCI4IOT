@@ -5,7 +5,7 @@ class NTC
 
 def initialize(configuration,logger)
 	logger.debug("Init")
-	startTime=Time.now.to_f	
+	startTime=Time.now.to_f
 	ws = WebSocket::Client::Simple.connect configuration[:uri]
 	logger.info("Connected")
 	ws.on :message do |msg|

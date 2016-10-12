@@ -1,6 +1,6 @@
 require 'concurrent'
 
-class EWMA;
+class NTCtoDegrees;
 	def levelToDegrees(level)
 		r = 22000
 		a = -19.39
