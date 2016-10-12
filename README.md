@@ -15,13 +15,16 @@ The .ino code is a temperature sensor for an Arduino with an Ethernet shield. Th
 with an NTC 10K to the ground, and a 12 KOhm resistor to the 5Vcc pin of the Arduino. The output is connected to the A0
 pin of the Arduino.
 
-HOWTO: Create an account on ThingSpeak and annotate your writekey, upload the code to the Arduino and connect
-it to the same Ethernet of the host running the "manager.rb", replace your writekey in manager.rb, start the manager,
-and you'll see the temperature displayed on the ThingSpeak server.
+HOWTO: 
+* Create an account on ThingSpeak and annotate your writekey,
+* Rename secret_bogus.rb file as secret.rb and replace the bogus writeky with your one,
+* Upload the code to the Arduino and connect it to the same Ethernet of the host running the "manager.rb",
+* run "ruby manager.pl", 
+* ...see the temperature displayed on your ThingSpeak dashboard.
 
 If you want to understand something more:
 -) for the lazy, wait for the paper to be published
 -) for the social inclined, send me a mail
--) for the impatient, read the code (it's just ruby)
+-) for the impatient, read the code (it's just ruby code)
 
 Enjoy...
