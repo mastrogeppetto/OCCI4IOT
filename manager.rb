@@ -21,6 +21,16 @@ mixins = {
 		period:1,
 		uri: 'ws://192.168.113.177'
 	},
+	'BogusSensor' => {
+		name:'a',
+		period:1,
+		uri: 'ws://192.168.113.5:8000'
+	},
+	'BogusSensor' => {
+		name:'b',
+		period:1,
+		uri: 'ws://192.168.113.5:8000'
+	},
 	'ThingSpeak' => {
 		value_in: channel["channel2"],
 		field: 'field1',
