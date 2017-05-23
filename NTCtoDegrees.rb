@@ -14,7 +14,7 @@ class NTCtoDegrees;
 	def run()
 		task = Concurrent::TimerTask.new(
 		dup_on_deref: true,
-		execution_interval: 30, 
+		execution_interval: 60, 
 		timeout_interval: 5) {
 			@configuration[:degrees_out].push(@ewma.round(2))
 			logger.debug("EWMA: new filtered data sent")
