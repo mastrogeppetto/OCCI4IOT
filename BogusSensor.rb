@@ -1,5 +1,6 @@
 require 'websocket-client-simple'
 require 'rubygems'
+require 'json'
 
 class BogusSensor
 
@@ -9,10 +10,12 @@ def initialize(configuration,logger)
 	logger.info("Connected")
 	ws.on :message do |msg|
 		begin
-			data=msg.data.split[0].to_i
-			logger.info("Bogus data: " + data.to_s)
-#			configuration[:level_out].push(raw_temp);
-#			ws.send("Ack!")
+      data={
+        :id => configuration[:id],
+        :n  => msg.data.split[0].to_i
+        }
+      configuration[:check_out].push(JSON.generate(data))
+			#logger.info("Bogus data: " + data.to_s)
 		rescue Exception => e
 			logger.error "Bogus sensor: Send problem: closing websocket (#{e.inspect})"
 			ws.close()

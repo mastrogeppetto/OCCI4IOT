@@ -3,6 +3,7 @@ require 'rubygems'
 
 class NTC
 
+
 def initialize(configuration,logger)
 	logger.debug("Init")
 	startTime=Time.now.to_f
@@ -27,7 +28,7 @@ def initialize(configuration,logger)
 		exit 1
 	end
 	ws.on :error do |e|
-		@logger.error "NTC: error (#{e.inspect})"
+		logger.error "NTC: error (#{e.inspect})"
 	end
 end
 
