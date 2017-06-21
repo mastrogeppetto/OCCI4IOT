@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+gem 'concurrent-ruby', '~> 1.0', '>= 1.0.2'
+gem 'json_pure', '~> 1.8.0'
+gem 'net-http-persistent', '~> 2.9.4'
+gem 'logger', '~> 1.2', '>= 1.2.8'
+gem 'websocket-client-simple', '~> 0.3.0'
