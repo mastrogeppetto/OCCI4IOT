@@ -1,0 +1,16 @@
+- Download the OCCI4IOT repo
+- cd into the repo
+- take a note of the local docker0 IP address (e.g. 172.17.0.1)
+- take a note of the remote arduino NTC device (e.g. 192.168.5.177)
+- update the ENV definitions in the Dockerfile:
+  SINK is the local docker0 address
+  NTC is the arduino device
+- launch the bogus_sensor with
+  $ gunicorn -k flask_sockets.worker -b 0.0.0.0 bogus_sensor:app
+- reset the Arduino NTC device
+- open another terminal in the same repo directory
+- build	and run the docker (occi4iot is an arbitrary name)
+  $ docker build -t occi4iot .
+  $ docker run -t occi4iot
+
+If you modify any file in the OCCI4IOT directory you need to repeat the build and run steps.
