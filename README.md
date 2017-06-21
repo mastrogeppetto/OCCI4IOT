@@ -5,12 +5,12 @@ This software validates a design approach described in a currently submitted pap
 
 Basically, it helps the deployment of an IoT infrastructure, starting from a JSON file that describes its components. The JSON file follows the OCCI standard, and describes the IoT infrastructure as resources with links connecting them. In the proof-of-concept implementation the "manager" thread contains that description, already converted into a Ruby hash. Running the "manager.rb" on a host creates a three-stages pipeline, that receives data from an external sensor through a websocket, processes and filters the data and sends them to a ThingSpeak server: the writekey for the ThingSpeak account in the code is clearly bogus.
 
-The external sensor is an Arduino that samples at regular intervals the value of a NTC resistor. for an Arduino with an Ethernet shield. The sketch and the schema are found in another repo: https://github.com/mastrogeppetto/arduino_NTCwebsocket.
+The external sensor is an Arduino that samples at regular intervals the value of a NTC resistor. For this you need an Arduino with an Ethernet shield, a 22K resistor and a 10K NTC. The sketch and the schema are found in another repo: https://github.com/mastrogeppetto/arduino_NTCwebsocket.
 
 ## HOWTO:
  
 * Create an account on ThingSpeak and annotate your writekey,
-* Rename secret_bogus.rb file as secret.rb and replace the bogus writeky with your one,
+* Rename secret_bogus.rb file as secret.rb and replace the bogus writekey with your one,
 * Upload the code to the Arduino and connect it to the same Ethernet of the host running the "manager.rb",
 * run "ruby manager.pl", 
 * ...see the temperature displayed on your ThingSpeak dashboard.
